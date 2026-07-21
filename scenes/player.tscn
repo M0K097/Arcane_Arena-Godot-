@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://w55x73einp6x"]
 
 [ext_resource type="Script" uid="uid://wfgkfn0usg84" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://c28pviu6noy8b" path="res://art/Player_Sprites/Mage_2_Back.png" id="2_dqkch"]
-[ext_resource type="Texture2D" uid="uid://ctkq1fl7jklia" path="res://art/Player_Sprites/Mage_2_Side.png" id="3_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://c6xpew647g1qd" path="res://art/Player_Sprites/Mage_2.png" id="4_tuyoq"]
-[ext_resource type="Script" uid="uid://68ilt0fu5sci" path="res://scripts/animated_sprite_2d.gd" id="5_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://c28pviu6noy8b" path="res://art/player/Mage_2_Back.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://ctkq1fl7jklia" path="res://art/player/Mage_2_Side.png" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://c6xpew647g1qd" path="res://art/player/Mage_2.png" id="4_tuyoq"]
+[ext_resource type="Script" uid="uid://68ilt0fu5sci" path="res://scripts/player_animation_controller.gd" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
 radius = 6.0
@@ -180,7 +180,6 @@ metadata/_aseprite_wizard_interface_config_ = {
 [node name="Camera2D" type="Camera2D" parent="." unique_id=679585254]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 drag_horizontal_offset = 0.1
 drag_vertical_offset = 0.1
 drag_left_margin = 0.3

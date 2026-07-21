@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6xpew647g1qd"
-path="res://.godot/imported/Mage_2.png-a561929f35bdfdaae65a7b6cc6c6706d.ctex"
+uid="uid://cbk78a4m5mkmp"
+path="res://.godot/imported/Skeleton_walking_torso.png-cab61d4df53dadfe8b834c222561b1bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Player_Sprites/Mage_2.png"
-dest_files=["res://.godot/imported/Mage_2.png-a561929f35bdfdaae65a7b6cc6c6706d.ctex"]
+source_file="res://art/enemies/Skeleton/Skeleton_walking_torso.png"
+dest_files=["res://.godot/imported/Skeleton_walking_torso.png-cab61d4df53dadfe8b834c222561b1bc.ctex"]
 
 [params]
 

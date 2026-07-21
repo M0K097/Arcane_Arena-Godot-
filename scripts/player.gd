@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animator = $AnimatedSprite2D
 
-const SPEED = 100.0
+const SPEED = 150
 const SMOOTHING = 2
 
 var last_direction

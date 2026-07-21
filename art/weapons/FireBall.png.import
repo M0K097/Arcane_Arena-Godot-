@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctkq1fl7jklia"
-path="res://.godot/imported/Mage_2_Side.png-13892a2b263c8eda1812af045f1a70e8.ctex"
+uid="uid://j7i0kfdmo2oi"
+path="res://.godot/imported/FireBall.png-be8678cf38928e3fbadd9c18f3fec4d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Player_Sprites/Mage_2_Side.png"
-dest_files=["res://.godot/imported/Mage_2_Side.png-13892a2b263c8eda1812af045f1a70e8.ctex"]
+source_file="res://art/weapons/FireBall.png"
+dest_files=["res://.godot/imported/FireBall.png-be8678cf38928e3fbadd9c18f3fec4d7.ctex"]
 
 [params]
 

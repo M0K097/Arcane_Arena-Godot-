@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://cv40rmpv5vb0g"]
+
+[ext_resource type="PackedScene" uid="uid://dcpeceleuh1ke" path="res://scenes/fire_ball.tscn" id="1_enm2s"]
+[ext_resource type="Script" uid="uid://kcktgiiv1dyr" path="res://scripts/WeaponResourceBlueprint.gd" id="1_ts3hf"]
+
+[resource]
+script = ExtResource("1_ts3hf")
+name = "WandOfFire"
+cooldown = 2.0
+projectile_scene = ExtResource("1_enm2s")
+metadata/_custom_type_script = "uid://kcktgiiv1dyr"

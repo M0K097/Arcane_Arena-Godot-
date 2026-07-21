@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c28pviu6noy8b"
-path="res://.godot/imported/Mage_2_Back.png-59d6078996165dc1cd2122eddef08a19.ctex"
+uid="uid://ctkq1fl7jklia"
+path="res://.godot/imported/Mage_2_Side.png-551676c6cc197f905c96d54311b23a4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Player_Sprites/Mage_2_Back.png"
-dest_files=["res://.godot/imported/Mage_2_Back.png-59d6078996165dc1cd2122eddef08a19.ctex"]
+source_file="res://art/player/Mage_2_Side.png"
+dest_files=["res://.godot/imported/Mage_2_Side.png-551676c6cc197f905c96d54311b23a4a.ctex"]
 
 [params]
 
