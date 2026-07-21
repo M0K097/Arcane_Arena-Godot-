@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://cf6xmfkucitff"]
 
+[ext_resource type="Script" uid="uid://bataopia734ps" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://w55x73einp6x" path="res://scenes/player.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://btx06hjalko2u" path="res://scenes/skeleton.tscn" id="2_rwgxs"]
 
 [node name="World" type="Node2D" unique_id=1475946901]
+script = ExtResource("1_4wyf3")
 
 [node name="Player" parent="." unique_id=1469411673 instance=ExtResource("1_f3sb7")]
 
-[node name="Line2D" type="Line2D" parent="." unique_id=1423636419]
-points = PackedVector2Array(59, 21, 25, 44, 8, 64)
+[node name="Skeleton" parent="." unique_id=1126655945 instance=ExtResource("2_rwgxs")]
+position = Vector2(53, -17)
