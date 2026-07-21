@@ -1,21 +1,18 @@
 extends CharacterBody2D
 
-@onready var animation = $AnimatedSprite2D
-@export var speed_multiplier: float = 1
+@onready var animator = $AnimatedSprite2D
 
-const SPEED = 200.0
-const SMOOTHING = 3
+const SPEED = 100.0
+const SMOOTHING = 2
 
+var last_direction
 
 func _physics_process(_delta: float) -> void:
-	var direction = Input.get_vector("go_left","go_right","go_up","go_down")
-	var applied_speed = SPEED * speed_multiplier
-	if direction:
-		velocity = velocity.move_toward( direction * applied_speed , applied_speed / SMOOTHING)
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO, applied_speed / SMOOTHING)
+	var direction = Input.get_vector("go_left" ,"go_right" ,"go_up" ,"go_down")
+	if direction != last_direction:
+		var applied_movement = direction * SPEED
+		velocity = applied_movement
+		animator._select_animation(velocity)
+		last_direction = direction
 
-	animation.direction = direction
-	animation.speed_scale = speed_multiplier
-			
 	move_and_slide()

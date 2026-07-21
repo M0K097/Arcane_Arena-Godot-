@@ -5,4 +5,6 @@
 [node name="World" type="Node2D" unique_id=1475946901]
 
 [node name="Player" parent="." unique_id=1469411673 instance=ExtResource("1_f3sb7")]
-visible = true
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1423636419]
+points = PackedVector2Array(59, 21, 25, 44, 8, 64)
