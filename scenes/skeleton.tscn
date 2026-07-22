@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://btx06hjalko2u"]
 
 [ext_resource type="Script" uid="uid://ddsykqhryx8ro" path="res://scripts/skeleton.gd" id="1_pbvs3"]
+[ext_resource type="Script" uid="uid://cq0rce3rsleda" path="res://scripts/skeleton_controller.gd" id="2_ssl1b"]
 [ext_resource type="Texture2D" uid="uid://ddlac4qej76h1" path="res://art/enemies/Skeleton/Skeleton_Front.png" id="2_txkty"]
 [ext_resource type="Texture2D" uid="uid://bsekv4wdg2af8" path="res://art/enemies/Skeleton/Skeleton_headless.png" id="3_5pgwy"]
 [ext_resource type="Script" uid="uid://bsri1ma2hhayp" path="res://scripts/skeleton_animation.gd" id="3_ivqcw"]
@@ -143,9 +144,12 @@ health = 200
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816649195]
 shape = SubResource("CapsuleShape2D_j2p6m")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=166142140]
+[node name="Node2D" type="Node2D" parent="." unique_id=1358685182]
+
+[node name="SkeletonController" type="Node2D" parent="." unique_id=1478095449]
+script = ExtResource("2_ssl1b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SkeletonController" unique_id=166142140]
 sprite_frames = SubResource("SpriteFrames_j2p6m")
-animation = &"nearly_done"
+autoplay = "default"
 script = ExtResource("3_ivqcw")
-loose_head_health = 150
-only_torso_health = 100

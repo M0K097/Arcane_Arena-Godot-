@@ -2,7 +2,7 @@ extends RigidBody2D
 class_name projectile
 
 var target: CharacterBody2D
-var force: float = 100
+var force: float = 200
 var visible_notifier: VisibleOnScreenNotifier2D
 
 func _ready() -> void:

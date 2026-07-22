@@ -1,9 +1,8 @@
 extends AnimatedSprite2D
 
-@export var loose_head_health: int
-@export var only_torso_health: int
 
 func _ready() -> void:
+	set_animation_based_on_health(2)
 	play()
 
 func flip_sprite(velocity:Vector2):
@@ -13,9 +12,9 @@ func flip_sprite(velocity:Vector2):
 		flip_h = false
 		
 func set_animation_based_on_health(health: int):
-	if health <= only_torso_health:
+	if health <= 50:
 		play("nearly_done")
-	elif health <= loose_head_health:
+	elif health <= 100:
 		play("headless")
 	else:
 		play("default")

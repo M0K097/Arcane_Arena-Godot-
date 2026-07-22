@@ -14,3 +14,9 @@ script = ExtResource("1_4wyf3")
 
 [node name="Skeleton" parent="." unique_id=1126655945 instance=ExtResource("2_rwgxs")]
 position = Vector2(53, -17)
+
+[node name="Skeleton2" parent="." unique_id=486335345 instance=ExtResource("2_rwgxs")]
+position = Vector2(18, -37)
+
+[node name="Skeleton3" parent="." unique_id=1279655636 instance=ExtResource("2_rwgxs")]
+position = Vector2(51, 11)
