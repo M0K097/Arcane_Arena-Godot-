@@ -24,6 +24,7 @@ func _activate_particle_impact():
 func _change_particle_effect(particles):
 	particles.global_position = global_position
 	particles.speed_scale = 10
+	particles.lifetime = 3
 	particles.amount = 50
 	particles.trail_enabled = true
 	particles.process_material.set_spread(100.0)

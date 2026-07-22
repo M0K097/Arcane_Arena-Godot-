@@ -43,12 +43,11 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_whh6h"]
 frames = 3
-speed_scale = 0.5
 frame_0/texture = ExtResource("3_0voa0")
 frame_0/duration = 0.1
 frame_1/texture = ExtResource("5_j2om3")
@@ -89,10 +88,9 @@ autoplay = "default"
 frame_progress = 0.62713677
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=636928511]
-amount = 20
+amount = 50
 texture = SubResource("AnimatedTexture_whh6h")
 lifetime = 2.0
-speed_scale = 2.0
 explosiveness = 0.1
 randomness = 0.3
 trail_lifetime = 0.2
