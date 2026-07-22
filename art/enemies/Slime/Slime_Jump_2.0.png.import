@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuprhuq6q4b2c"
-path="res://.godot/imported/particle_fire2.png-76279a8dd2c7d0a673b462533b357292.ctex"
+uid="uid://pccqoy8subuo"
+path="res://.godot/imported/Slime_Jump_2.0.png-f5a2cc6a158e849b66beba6e62b8baab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/weapons/particle_fire2.png"
-dest_files=["res://.godot/imported/particle_fire2.png-76279a8dd2c7d0a673b462533b357292.ctex"]
+source_file="res://art/enemies/Slime/Slime_Jump_2.0.png"
+dest_files=["res://.godot/imported/Slime_Jump_2.0.png-f5a2cc6a158e849b66beba6e62b8baab.ctex"]
 
 [params]
 

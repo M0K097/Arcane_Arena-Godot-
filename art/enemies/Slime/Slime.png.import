@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f8lvqgrk5e1b"
-path="res://.godot/imported/particle_fire3.png-712fe68465caa9074527dca4d5f3227e.ctex"
+uid="uid://or5akmjssmle"
+path="res://.godot/imported/Slime.png-1d50f9c4e9464581e01d2c2e96d56736.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/weapons/particle_fire3.png"
-dest_files=["res://.godot/imported/particle_fire3.png-712fe68465caa9074527dca4d5f3227e.ctex"]
+source_file="res://art/enemies/Slime/Slime.png"
+dest_files=["res://.godot/imported/Slime.png-1d50f9c4e9464581e01d2c2e96d56736.ctex"]
 
 [params]
 

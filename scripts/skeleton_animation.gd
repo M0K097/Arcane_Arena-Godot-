@@ -11,10 +11,11 @@ func flip_sprite(velocity:Vector2):
 	else:
 		flip_h = false
 		
-func set_animation_based_on_health(health: int):
-	if health <= 50:
-		play("nearly_done")
-	elif health <= 100:
-		play("headless")
-	else:
-		play("default")
+func set_animation_based_on_health(animation_index: int):
+	match animation_index:
+		0:
+			play("nearly_done")
+		1:
+			play("headless")
+		2:
+			play("default")

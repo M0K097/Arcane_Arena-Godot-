@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5b3pqr6sxnwv"
-path="res://.godot/imported/particle_fire1.png-e2ad9a5795c786ff4cbfd85bf59cb65e.ctex"
+uid="uid://cuprhuq6q4b2c"
+path="res://.godot/imported/particle_fire2.png-bdf62bd0958e54dca6a97d5e6263f899.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/weapons/particle_fire1.png"
-dest_files=["res://.godot/imported/particle_fire1.png-e2ad9a5795c786ff4cbfd85bf59cb65e.ctex"]
+source_file="res://art/weapons/FireBall/particle_fire2.png"
+dest_files=["res://.godot/imported/particle_fire2.png-bdf62bd0958e54dca6a97d5e6263f899.ctex"]
 
 [params]
 
