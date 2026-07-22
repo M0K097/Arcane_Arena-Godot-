@@ -148,6 +148,18 @@ animations = [{
 }]
 metadata/imported_via_aw = true
 
+[sub_resource type="Gradient" id="Gradient_qlg0r"]
+offsets = PackedFloat32Array(0.22047244, 0.27559054, 0.68503934)
+colors = PackedColorArray(0.8103448, 0.8103448, 0.8103448, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2p6m"]
+gradient = SubResource("Gradient_qlg0r")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j2p6m"]
+polygon = PackedVector2Array(1, -14, -4, -9, -10, -7, -10, -5, 0, -2, 10, -5, 10, -8, 3, -9)
+
 [node name="Player" type="CharacterBody2D" unique_id=1469411673]
 script = ExtResource("1_3vyb7")
 
@@ -184,3 +196,13 @@ drag_horizontal_offset = 0.1
 drag_vertical_offset = 0.1
 drag_left_margin = 0.3
 drag_top_margin = 0.3
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=673562176]
+position = Vector2(0, -9)
+color = Color(0.5411765, 0.37254903, 0.7764706, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_j2p6m")
+texture_scale = 3.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1364117701]
+occluder = SubResource("OccluderPolygon2D_j2p6m")

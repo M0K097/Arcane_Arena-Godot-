@@ -72,6 +72,15 @@ radial_accel_max = 17.269997
 scale_min = 0.099999994
 scale_max = 2.0
 
+[sub_resource type="Gradient" id="Gradient_0voa0"]
+offsets = PackedFloat32Array(0.05511811, 0.18897638, 0.8267717)
+colors = PackedColorArray(1, 1, 1, 1, 0.5476191, 0.5476191, 0.5476191, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2p6m"]
+gradient = SubResource("Gradient_0voa0")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="FireBall" type="RigidBody2D" unique_id=1540961145]
 collision_layer = 2
 collision_mask = 2
@@ -89,13 +98,24 @@ autoplay = "default"
 frame_progress = 0.62713677
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=636928511]
+texture_filter = 1
+use_parent_material = true
 amount = 50
 texture = SubResource("AnimatedTexture_whh6h")
 lifetime = 2.0
 explosiveness = 0.1
 randomness = 0.3
+trail_enabled = true
 trail_lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_ggq3o")
 script = ExtResource("6_0voa0")
+
+[node name="PointLight2D" type="PointLight2D" parent="GPUParticles2D" unique_id=1882891816]
+color = Color(0.9098039, 0.3254902, 0, 0.79607844)
+energy = 2.0
+shadow_enabled = true
+shadow_filter_smooth = 1.0
+texture = SubResource("GradientTexture2D_j2p6m")
+texture_scale = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

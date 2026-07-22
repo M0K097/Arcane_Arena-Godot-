@@ -30,6 +30,15 @@ gravity = Vector3(0, 98, 0)
 scale_min = 0.099999994
 scale_max = 2.0
 
+[sub_resource type="Gradient" id="Gradient_r0x8t"]
+offsets = PackedFloat32Array(0.22834645, 0.6929134)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2p6m"]
+gradient = SubResource("Gradient_r0x8t")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="BurningDebuff" type="Node2D" unique_id=830696637]
 script = ExtResource("1_1tqq8")
 burn_damage = 5
@@ -45,5 +54,12 @@ process_material = SubResource("ParticleProcessMaterial_j2p6m")
 
 [node name="Timer" type="Timer" parent="." unique_id=1436437384]
 autostart = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=753281771]
+color = Color(1, 0.53333336, 0.16078432, 0.7921569)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_j2p6m")
+texture_scale = 3.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

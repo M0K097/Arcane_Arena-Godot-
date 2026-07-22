@@ -15,7 +15,7 @@ func _activate_particle_impact():
 	remove_child(particles)
 	get_tree().current_scene.add_child(particles)
 	var timer = Timer.new()
-	timer.wait_time = 1
+	timer.wait_time = 0.5
 	_change_particle_effect(particles)
 	particles.add_child(timer)
 	timer.timeout.connect(particles._remove_particles)
