@@ -22,10 +22,6 @@ func _physics_process(_delta: float) -> void:
 func _action_on_death():
 	pass
 
-func change_speed(new_speed_value:int):
-	movement_speed += new_speed_value
-	if movement_speed < minimal_movement_speed:
-		movement_speed = minimal_movement_speed
 
 func do_damage(damage_value: int):
 	health -= damage_value
