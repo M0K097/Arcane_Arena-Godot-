@@ -12,7 +12,6 @@ func _on_timer_timeout() -> void:
 	if not activated:
 		return
 	var select = randi_range(0, enemies.size() - 1)
-	select = 1
 	var new_enemy = enemies[select].instantiate()
 	if player != null:
 		new_enemy.target = player
