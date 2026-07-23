@@ -1,7 +1,5 @@
 extends AnimatedSprite2D
 
-@onready var shadow = $LightOccluder2D
-
 func _ready() -> void:
 	set_animation_based_on_health(2)
 	play()

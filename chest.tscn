@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bu2wilay2ieyd"]
+
+[ext_resource type="Texture2D" uid="uid://cuuqktbousjn" path="res://art/items/chest_standart_new.png" id="1_twpm2"]
+[ext_resource type="Script" uid="uid://bqw7ov6kv52y8" path="res://chest.gd" id="2_8uwsg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uwsg"]
+atlas = ExtResource("1_twpm2")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp1or"]
+atlas = ExtResource("1_twpm2")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trlyu"]
+atlas = ExtResource("1_twpm2")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7mpe"]
+atlas = ExtResource("1_twpm2")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2p6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uwsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp1or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trlyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7mpe")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j2p6m"]
+radius = 21.333334
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_twpm2"]
+closed = false
+cull_mode = 2
+polygon = PackedVector2Array(-5.333334, -8, 7.466667, -8, 7.466667, -5, 8.533334, -5, 8.533334, 0, 7.466667, 0, 7.466667, 3, -5.333334, 3, -5.333334, 2, -5.333334, -1, -6.4000006, -1, -6.4000006, -5, -5.333334, -5)
+
+[sub_resource type="Gradient" id="Gradient_twpm2"]
+offsets = PackedFloat32Array(0.06382979, 0.11246201, 0.1762918, 0.37386018, 0.47720364)
+colors = PackedColorArray(1, 1, 1, 1, 0.6518987, 0.6518987, 0.6518987, 1, 0.40933174, 0.40933174, 0.40933174, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2p6m"]
+gradient = SubResource("Gradient_twpm2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bv3sb"]
+lifetime_randomness = 0.84
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 39.706
+initial_velocity_min = 63.039997
+initial_velocity_max = 186.25
+gravity = Vector3(0, 98, 0)
+scale_min = 0.0
+scale_max = 0.97999996
+hue_variation_min = 0.18999997
+hue_variation_max = 0.35999995
+
+[node name="Chest" type="AnimatedSprite2D" unique_id=1101684583]
+top_level = true
+scale = Vector2(0.9375, 1)
+sprite_frames = SubResource("SpriteFrames_j2p6m")
+script = ExtResource("2_8uwsg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=394271787]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1915457540]
+position = Vector2(1.0666667, -1)
+shape = SubResource("CircleShape2D_j2p6m")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=333917714]
+occluder = SubResource("OccluderPolygon2D_twpm2")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=158856030]
+color = Color(0.5304188, 0.5221896, 0, 1)
+texture = SubResource("GradientTexture2D_j2p6m")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="PointLight2D" unique_id=911987295]
+position = Vector2(1.0666667, -2)
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.8
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_bv3sb")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
