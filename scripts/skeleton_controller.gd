@@ -5,7 +5,7 @@ extends Node2D
 var body: CharacterBody2D
 var last_health_value: int
 
-func _process(delta: float) -> void:
+func _process(_adelta: float) -> void:
 	animation.flip_sprite(body.velocity)
 	var health = body.health
 	if health != last_health_value:
