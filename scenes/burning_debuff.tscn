@@ -57,6 +57,7 @@ autostart = true
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=753281771]
 color = Color(1, 0.53333336, 0.16078432, 0.87058824)
+energy = 0.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_j2p6m")
 texture_scale = 2.0

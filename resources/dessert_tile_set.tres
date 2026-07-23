@@ -35,9 +35,18 @@ tile_data = PackedInt32Array(0, 131072, 2, 65536, 131072, 1, 131072, 131072, 2, 
 [sub_resource type="TileMapPattern" id="TileMapPattern_e0t5c"]
 tile_data = PackedInt32Array(0, 131072, 2, 65536, 131072, 1, 131072, 131072, 2, 196608, 131072, 1, 262144, 131072, 1, 327680, 131072, 1, 393216, 131072, 2, 458752, 131072, 3)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3yro0"]
+cull_mode = 1
+polygon = PackedVector2Array(4, 7, 4, 6, 5, 6, 5, 5, 6, 5, 6, 4, 7, 4, 7, 2, 8, 2, 8, -2, 7, -2, 7, -3, 4, -3, 4, -4, -4, -4, -4, -3, -7, -3, -7, -2, -8, -2, -8, 2, -7, 2, -7, 4, -6, 4, -6, 5, -5, 5, -5, 6, -4, 6, -4, 7)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_25y58"]
+cull_mode = 1
+polygon = PackedVector2Array(0.5, 7, -3.5, 2.5, 0.5, 6.5, -1.5, 0, 0.5, 6, 1, 1.5, 0.5, 6, 0.5, 5.5, 2.5, 1.5)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25y58"]
 texture = ExtResource("1_3yro0")
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_3yro0")
 1:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -158,8 +167,10 @@ texture = ExtResource("1_3yro0")
 0:8/animation_frame_5/duration = 1.0
 0:8/animation_frame_6/duration = 1.0
 0:8/0 = 0
+0:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_25y58")
 
 [resource]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_25y58")
 pattern_0 = SubResource("TileMapPattern_3yro0")
