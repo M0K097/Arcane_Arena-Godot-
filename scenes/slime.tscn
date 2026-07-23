@@ -150,6 +150,8 @@ animations = [{
 radius = 137.00365
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n6pvg"]
+closed = false
+cull_mode = 2
 polygon = PackedVector2Array(-2, -7, 3, -7, 5, -5, 5, -1, 5, 2, 3, 4, -3, 4, -5, 2, -5, -2, -4, -5)
 
 [node name="Slime" type="CharacterBody2D" unique_id=558152519]

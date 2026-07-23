@@ -134,13 +134,14 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j2p6m"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ssl1b"]
+closed = false
 cull_mode = 2
-polygon = PackedVector2Array(1, -5, 5, -5, 5, 2, 3, 8, 4, 14, 3, 14, 1, 8, 0, 14, -1, 9, -1, 4, -1, -4)
+polygon = PackedVector2Array(-1, -6, 3, -6, 5, -4, 4, 7, 2, 8, 2, 14, -2, 14, -2, 3)
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=486335345]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_pbvs3")
 movement_speed = 50.0
 health = 200
@@ -154,10 +155,10 @@ shape = SubResource("CapsuleShape2D_j2p6m")
 script = ExtResource("2_ssl1b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SkeletonController" unique_id=166142140]
+position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_j2p6m")
 autoplay = "default"
 script = ExtResource("3_ivqcw")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="SkeletonController/AnimatedSprite2D" unique_id=1706276479]
-position = Vector2(-4, 0)
-occluder = SubResource("OccluderPolygon2D_j2p6m")
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=247728978]
+occluder = SubResource("OccluderPolygon2D_ssl1b")
