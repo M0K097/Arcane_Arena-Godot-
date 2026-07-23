@@ -134,11 +134,6 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j2p6m"]
-closed = false
-cull_mode = 2
-polygon = PackedVector2Array(4, -5, 7, -3, 5, 2, 5, 6, 3, 9, 3, 13, -1, 13, 0, 0, -1, -2)
-
 [node name="Skeleton" type="CharacterBody2D" unique_id=486335345]
 collision_layer = 2
 collision_mask = 3
@@ -158,6 +153,3 @@ script = ExtResource("2_ssl1b")
 sprite_frames = SubResource("SpriteFrames_j2p6m")
 autoplay = "default"
 script = ExtResource("3_ivqcw")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=165614676]
-occluder = SubResource("OccluderPolygon2D_j2p6m")

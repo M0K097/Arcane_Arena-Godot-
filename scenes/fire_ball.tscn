@@ -73,8 +73,8 @@ scale_min = 0.099999994
 scale_max = 2.0
 
 [sub_resource type="Gradient" id="Gradient_0voa0"]
-offsets = PackedFloat32Array(0.05511811, 0.18897638, 0.8267717)
-colors = PackedColorArray(1, 1, 1, 1, 0.5476191, 0.5476191, 0.5476191, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.18110237, 0.4015748, 0.70866144)
+colors = PackedColorArray(0.5476191, 0.5476191, 0.5476191, 1, 1, 1, 1, 1, 0.28325126, 0.28325126, 0.28325126, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_j2p6m"]
 gradient = SubResource("Gradient_0voa0")
@@ -87,7 +87,6 @@ collision_mask = 2
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_qddq2")
-damage = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1983955676]
 shape = SubResource("CircleShape2D_j2p6m")
@@ -116,6 +115,5 @@ energy = 2.0
 shadow_enabled = true
 shadow_filter_smooth = 1.0
 texture = SubResource("GradientTexture2D_j2p6m")
-texture_scale = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

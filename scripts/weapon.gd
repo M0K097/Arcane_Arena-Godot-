@@ -2,9 +2,7 @@ extends Node2D
 class_name weapon
 
 @onready var area_of_attack = $AttackArea
-
 @export var weapon_data: WeaponResource
-
 var attack_timer: Timer
 
 func _ready():

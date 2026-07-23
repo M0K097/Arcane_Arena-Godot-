@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bx34rf0o6k1nw" path="res://scripts/attack_area.gd" id="3_yc8bb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2p6m"]
-radius = 260.12305
+radius = 221.00226
 
 [node name="FireWand" type="Node2D" unique_id=1054234593]
 script = ExtResource("1_sgi8f")

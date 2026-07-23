@@ -31,8 +31,8 @@ scale_min = 0.099999994
 scale_max = 2.0
 
 [sub_resource type="Gradient" id="Gradient_r0x8t"]
-offsets = PackedFloat32Array(0.22834645, 0.6929134)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.09448819, 0.3464567, 0.6535433, 0.6771653)
+colors = PackedColorArray(1, 1, 1, 1, 0.47457623, 0.47457623, 0.47457623, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_j2p6m"]
 gradient = SubResource("Gradient_r0x8t")
@@ -56,10 +56,9 @@ process_material = SubResource("ParticleProcessMaterial_j2p6m")
 autostart = true
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=753281771]
-color = Color(1, 0.53333336, 0.16078432, 0.7921569)
-energy = 0.5
+color = Color(1, 0.53333336, 0.16078432, 0.87058824)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_j2p6m")
-texture_scale = 3.0
+texture_scale = 2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
