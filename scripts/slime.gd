@@ -2,7 +2,6 @@ extends Enemy
 
 var slime = preload("res://scenes/slime.tscn")
 
-var tween = create_tween()
 @onready var animation = $AnimatedSprite2D
 @onready var shadow = $LightOccluder2D
 
