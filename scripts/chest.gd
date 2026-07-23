@@ -2,14 +2,11 @@ extends AnimatedSprite2D
 
 var open: bool = false
 
-var wand_of_fire = preload("res://scenes/fire_wand.tscn")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player and not open:
 		_animate_with_tween()
 		open = true
-
-
 
 func _animate_with_tween():
 	var tween = create_tween()

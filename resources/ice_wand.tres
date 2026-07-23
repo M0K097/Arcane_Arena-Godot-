@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://dh1mmbkvw2g56"]
+
+[ext_resource type="Script" uid="uid://kcktgiiv1dyr" path="res://scripts/WeaponResourceBlueprint.gd" id="1_2qa73"]
+[ext_resource type="PackedScene" uid="uid://bnyllfgn0ecpy" path="res://scenes/ice_bolts.tscn" id="1_mvsrp"]
+
+[resource]
+script = ExtResource("1_2qa73")
+name = "WandOfIce"
+cooldown = 3.0
+projectile_scene = ExtResource("1_mvsrp")
+metadata/_custom_type_script = "uid://kcktgiiv1dyr"

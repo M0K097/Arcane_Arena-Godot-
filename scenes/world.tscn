@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bataopia734ps" path="res://scripts/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://w55x73einp6x" path="res://scenes/player.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://dxoliu6eguu1y" path="res://scenes/MagicWand.tscn" id="3_qfnet"]
+[ext_resource type="Resource" uid="uid://dh1mmbkvw2g56" path="res://resources/ice_wand.tres" id="4_i7141"]
 [ext_resource type="PackedScene" uid="uid://d6er3c0xykiv" path="res://scenes/enemy_spawner.tscn" id="5_71j4m"]
-[ext_resource type="PackedScene" uid="uid://bu2wilay2ieyd" path="res://chest.tscn" id="5_i7141"]
+[ext_resource type="PackedScene" uid="uid://bu2wilay2ieyd" path="res://scenes/chest.tscn" id="5_i7141"]
 [ext_resource type="TileSet" uid="uid://cnbroui62ngn2" path="res://resources/dessert_tile_set.tres" id="5_qfnet"]
 
 [sub_resource type="Environment" id="Environment_j2p6m"]
@@ -21,6 +23,11 @@ script = ExtResource("1_4wyf3")
 [node name="Player" parent="." unique_id=1469411673 instance=ExtResource("1_f3sb7")]
 z_index = 1
 position = Vector2(-31, -44)
+
+[node name="MagicWand2" parent="Player" unique_id=151872196 instance=ExtResource("3_qfnet")]
+weapon_data = ExtResource("4_i7141")
+
+[node name="MagicWand" parent="Player" unique_id=1054234593 instance=ExtResource("3_qfnet")]
 
 [node name="EnemySpawner" parent="." unique_id=292350509 instance=ExtResource("5_71j4m")]
 
@@ -44,5 +51,4 @@ environment = SubResource("Environment_j2p6m")
 color = Color(0.5705668, 0.43305558, 0.34574336, 1)
 
 [node name="Chest" parent="." unique_id=1101684583 instance=ExtResource("5_i7141")]
-visible = true
 top_level = false

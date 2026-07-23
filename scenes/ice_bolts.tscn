@@ -1,60 +1,55 @@
-[gd_scene format=3 uid="uid://dcpeceleuh1ke"]
+[gd_scene format=3 uid="uid://bnyllfgn0ecpy"]
 
-[ext_resource type="Texture2D" uid="uid://j7i0kfdmo2oi" path="res://art/weapons/FireBall/FireBall.png" id="1_51gij"]
-[ext_resource type="Script" uid="uid://xy2432u8u4sa" path="res://scripts/fire_ball.gd" id="1_qddq2"]
-[ext_resource type="PackedScene" uid="uid://dj0t5fnflqgr" path="res://scenes/burning_debuff.tscn" id="2_8nu5i"]
-[ext_resource type="Texture2D" uid="uid://c5b3pqr6sxnwv" path="res://art/weapons/FireBall/particle_fire1.png" id="3_0voa0"]
-[ext_resource type="Texture2D" uid="uid://f8lvqgrk5e1b" path="res://art/weapons/FireBall/particle_fire3.png" id="5_j2om3"]
-[ext_resource type="Script" uid="uid://bxtr26bhfrcce" path="res://scripts/gpu_particles_2d.gd" id="6_0voa0"]
-[ext_resource type="Texture2D" uid="uid://cfd2qmvo4iqnp" path="res://art/weapons/FireBall/particle_fire4.png" id="6_wkpos"]
+[ext_resource type="Script" uid="uid://xy2432u8u4sa" path="res://scripts/fire_ball.gd" id="1_o1k1m"]
+[ext_resource type="Texture2D" uid="uid://b5t2fybjs0fco" path="res://art/weapons/IceBolds/ice_bolts.png" id="2_kag18"]
+[ext_resource type="PackedScene" uid="uid://bacjn3lfa4g7h" path="res://scenes/freeze_debuff.tscn" id="2_klgmd"]
+[ext_resource type="Script" uid="uid://bxtr26bhfrcce" path="res://scripts/gpu_particles_2d.gd" id="6_ws2jx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2p6m"]
 radius = 4.1231055
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qddq2"]
-atlas = ExtResource("1_51gij")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_klgmd"]
+atlas = ExtResource("2_kag18")
+region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_une7w"]
-atlas = ExtResource("1_51gij")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ggq3o"]
-atlas = ExtResource("1_51gij")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q54i"]
+atlas = ExtResource("2_kag18")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kry06"]
-atlas = ExtResource("1_51gij")
-region = Rect2(16, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1k1m"]
+atlas = ExtResource("2_kag18")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcapq"]
+atlas = ExtResource("2_kag18")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiyw1"]
+atlas = ExtResource("2_kag18")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j2p6m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qddq2")
+"texture": SubResource("AtlasTexture_klgmd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_une7w")
+"texture": SubResource("AtlasTexture_6q54i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ggq3o")
+"texture": SubResource("AtlasTexture_o1k1m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kry06")
+"texture": SubResource("AtlasTexture_jcapq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hiyw1")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 20.0
 }]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_whh6h"]
-frames = 3
-frame_0/texture = ExtResource("3_0voa0")
-frame_0/duration = 0.1
-frame_1/texture = ExtResource("5_j2om3")
-frame_1/duration = 0.1
-frame_2/texture = ExtResource("6_wkpos")
-frame_2/duration = 0.2
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ggq3o"]
 lifetime_randomness = 0.5
@@ -82,13 +77,13 @@ gradient = SubResource("Gradient_0voa0")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="FireBall" type="RigidBody2D" unique_id=1540961145]
+[node name="IceBolts" type="RigidBody2D" unique_id=1540961145]
 collision_layer = 0
 collision_mask = 2
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("1_qddq2")
-effect = ExtResource("2_8nu5i")
+script = ExtResource("1_o1k1m")
+effect = ExtResource("2_klgmd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1983955676]
 shape = SubResource("CircleShape2D_j2p6m")
@@ -96,23 +91,21 @@ shape = SubResource("CircleShape2D_j2p6m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=625760466]
 sprite_frames = SubResource("SpriteFrames_j2p6m")
 autoplay = "default"
-frame_progress = 0.62713677
+frame_progress = 0.80183226
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=636928511]
 texture_filter = 1
 use_parent_material = true
 amount = 50
-texture = SubResource("AnimatedTexture_whh6h")
-lifetime = 2.0
 explosiveness = 0.1
 randomness = 0.3
 trail_enabled = true
 trail_lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_ggq3o")
-script = ExtResource("6_0voa0")
+script = ExtResource("6_ws2jx")
 
 [node name="PointLight2D" type="PointLight2D" parent="GPUParticles2D" unique_id=1882891816]
-color = Color(0.9098039, 0.3254902, 0, 0.79607844)
+color = Color(0.26666668, 0.49019608, 0.8666667, 0.79607844)
 shadow_enabled = true
 shadow_filter_smooth = 1.0
 texture = SubResource("GradientTexture2D_j2p6m")

@@ -1,12 +1,12 @@
 extends projectile
 
 @export var damage = 50
-var burn_effect = preload("res://scenes/burning_debuff.tscn")
+@export var effect: PackedScene
 
 func _on_body_entered(body: Node) -> void:
 	if body is Enemy:
 		body.do_damage(damage)
-		body.add_child(burn_effect.instantiate())
+		body.add_child(effect.instantiate())
 		_activate_particle_impact()
 		queue_free()
 
