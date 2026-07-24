@@ -26,16 +26,18 @@ position = Vector2(-31, -44)
 [node name="EnemySpawner" parent="." unique_id=292350509 instance=ExtResource("5_71j4m")]
 position = Vector2(257, -109)
 
-[node name="SpointPoint1" type="Marker2D" parent="EnemySpawner" unique_id=1464556239]
+[node name="Markers" type="Node2D" parent="EnemySpawner" unique_id=689654799]
+
+[node name="SpointPoint1" type="Marker2D" parent="EnemySpawner/Markers" unique_id=1464556239]
 position = Vector2(-374, 313)
 
-[node name="SpointPoint2" type="Marker2D" parent="EnemySpawner" unique_id=940398067]
+[node name="SpointPoint2" type="Marker2D" parent="EnemySpawner/Markers" unique_id=940398067]
 position = Vector2(-366, -305)
 
-[node name="SpointPoint3" type="Marker2D" parent="EnemySpawner" unique_id=1971605930]
+[node name="SpointPoint3" type="Marker2D" parent="EnemySpawner/Markers" unique_id=1971605930]
 position = Vector2(-781, -7)
 
-[node name="SpointPoint4" type="Marker2D" parent="EnemySpawner" unique_id=1068167738]
+[node name="SpointPoint4" type="Marker2D" parent="EnemySpawner/Markers" unique_id=1068167738]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=743055183]
 tile_set = ExtResource("5_qfnet")

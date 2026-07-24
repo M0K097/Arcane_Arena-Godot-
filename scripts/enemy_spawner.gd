@@ -30,9 +30,7 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	if not activated:
 		return
-	var enemies_to_spawn = _choose_enemies()
-	for marker in get_random_markers(bad_luck):
-		_spawn_enemies(enemies_to_spawn, marker)
+	_spawn_enemies()
 
 func _spawn_loot(drop_chance, signal_position):
 	_spawn_chest(drop_chance,signal_position)
@@ -44,7 +42,7 @@ func _spawn_chest(chance,at_position):
 	if roll_the_dice <= chance:
 		var new_chest = chest.instantiate()
 		new_chest.global_position = at_position
-		call_deferred("add_child", new_chest)
+		get_tree().current_scene.add_child(new_chest)
 		bad_luck += 0.5
 
 func _spawm_potion(at_position):
@@ -52,12 +50,10 @@ func _spawm_potion(at_position):
 	if player.health == 1 and luck <= 30 or player.health <= 2 and luck <= 10 or luck <= 3:
 		var healing = healing_potion.instantiate()
 		healing.global_position = at_position
-		call_deferred("add_child", healing)
-
+		get_tree().current_scene.add_child(healing)
 
 func _choose_enemies():
 	var dice = randi_range(30 ,30 +  (total_chance - gametime.time_left))
-	print(dice)
 	var to_spawn = []
 	for bad in range(floor(bad_luck)):
 		if dice >= chance_skeleton:
@@ -69,7 +65,7 @@ func _choose_enemies():
 	return to_spawn
 	
 func get_random_markers(how_many):
-	var markers = get_children()
+	var markers = $Markers.get_children()
 	var random_markers: Array[Marker2D] = []
 	for turns in range(how_many):
 		var rng = randi_range(0,markers.size()-1)
@@ -78,10 +74,12 @@ func get_random_markers(how_many):
 	return random_markers
 
 
-func _spawn_enemies(list_of_enemies,marker: Marker2D):
-	for enemy in list_of_enemies:
-		if player != null:
-			enemy.target = player
-		get_tree().current_scene.add_child(enemy)
-		enemy.global_position = marker.global_position
-		enemy.hookup(_spawn_loot)
+func _spawn_enemies():
+	for marker in get_random_markers(1):
+		var enemies_to_spawn = _choose_enemies()
+		for enemy in enemies_to_spawn:
+			if player != null:
+				enemy.target = player
+			get_tree().current_scene.add_child(enemy)
+			enemy.global_position = marker.global_position
+			enemy.hookup(_spawn_loot)
