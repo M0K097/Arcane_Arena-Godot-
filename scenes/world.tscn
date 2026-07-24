@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d6er3c0xykiv" path="res://scenes/enemy_spawner.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://bu2wilay2ieyd" path="res://scenes/chest.tscn" id="5_i7141"]
 [ext_resource type="TileSet" uid="uid://cnbroui62ngn2" path="res://resources/dessert_tile_set.tres" id="5_qfnet"]
+[ext_resource type="PackedScene" uid="uid://cc70kcphfw2ce" path="res://scenes/hud.tscn" id="6_qfnet"]
 
 [sub_resource type="Environment" id="Environment_j2p6m"]
 background_mode = 3
@@ -45,3 +46,14 @@ color = Color(0.5066125, 0.6194641, 0.7636086, 1)
 
 [node name="Chest" parent="." unique_id=1101684583 instance=ExtResource("5_i7141")]
 position = Vector2(38.000004, -52)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1583229181]
+
+[node name="HUD" parent="CanvasLayer" unique_id=109111923 instance=ExtResource("6_qfnet")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_vertical = 0
+size_flags_horizontal = 0

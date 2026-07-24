@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctkq1fl7jklia" path="res://art/player/Mage_2_Side.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://c6xpew647g1qd" path="res://art/player/Mage_2.png" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://68ilt0fu5sci" path="res://scripts/player_animation_controller.gd" id="5_qlg0r"]
+[ext_resource type="Script" uid="uid://ddj5ewsoy5sw2" path="res://scenes/camera_2d.gd" id="6_fjrip"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
 radius = 6.0
@@ -157,6 +158,9 @@ gradient = SubResource("Gradient_qlg0r")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j2p6m"]
+radius = 7.071068
+
 [node name="Player" type="CharacterBody2D" unique_id=1469411673]
 script = ExtResource("1_3vyb7")
 
@@ -196,6 +200,7 @@ drag_horizontal_offset = 0.1
 drag_vertical_offset = 0.1
 drag_right_margin = 0.1
 drag_bottom_margin = 0.1
+script = ExtResource("6_fjrip")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=673562176]
 position = Vector2(0, -9)
@@ -206,3 +211,16 @@ shadow_filter = 1
 shadow_filter_smooth = 0.2
 texture = SubResource("GradientTexture2D_j2p6m")
 texture_scale = 3.0
+
+[node name="HitBox" type="Area2D" parent="." unique_id=268445066]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=913239726]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_j2p6m")
+
+[node name="DamageCooldown" type="Timer" parent="HitBox" unique_id=559297607]
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="timeout" from="HitBox/DamageCooldown" to="." method="_on_damage_cooldown_timeout"]

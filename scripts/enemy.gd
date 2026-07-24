@@ -9,10 +9,9 @@ var chest_chance_in_percent: int = 100
 @export var movement_speed: float
 @export var health: int
 @export var drop_chance: int
-
+@export var damage = 1
 
 var minimal_movement_speed: float = 10
-
 
 func _physics_process(_delta: float) -> void:
 	if target != null:
