@@ -24,6 +24,18 @@ z_index = 1
 position = Vector2(-31, -44)
 
 [node name="EnemySpawner" parent="." unique_id=292350509 instance=ExtResource("5_71j4m")]
+position = Vector2(257, -109)
+
+[node name="SpointPoint1" type="Marker2D" parent="EnemySpawner" unique_id=1464556239]
+position = Vector2(-374, 313)
+
+[node name="SpointPoint2" type="Marker2D" parent="EnemySpawner" unique_id=940398067]
+position = Vector2(-366, -305)
+
+[node name="SpointPoint3" type="Marker2D" parent="EnemySpawner" unique_id=1971605930]
+position = Vector2(-781, -7)
+
+[node name="SpointPoint4" type="Marker2D" parent="EnemySpawner" unique_id=1068167738]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=743055183]
 tile_set = ExtResource("5_qfnet")
@@ -42,6 +54,7 @@ tile_set = ExtResource("5_qfnet")
 environment = SubResource("Environment_j2p6m")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=841912128]
+position = Vector2(238, -229)
 color = Color(0.47970796, 0.59471977, 0.74447554, 1)
 
 [node name="Chest" parent="." unique_id=1101684583 instance=ExtResource("5_i7141")]
