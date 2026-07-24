@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://3t2yoy84an4b"]
+
+[ext_resource type="Script" uid="uid://beb6ghuerf8x4" path="res://scripts/pickup.gd" id="1_pg2rt"]
+[ext_resource type="Resource" uid="uid://dq8jr6v2r71dp" path="res://resources/pickup_fire_wand.tres" id="2_7cqbe"]
+[ext_resource type="Script" uid="uid://c011fv04ni5dn" path="res://scripts/PickupResource.gd" id="2_gyxxy"]
+[ext_resource type="Resource" uid="uid://belptg5apaxkl" path="res://resources/pickup_ice_wand.tres" id="4_4m06l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j2p6m"]
+radius = 15.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j2p6m"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_max = 167.36
+gravity = Vector3(0, 98, 0)
+scale_min = 0.19999999
+color = Color(1, 1, 0.37254903, 1)
+hue_variation_min = -0.010000022
+hue_variation_max = 0.12999998
+
+[sub_resource type="Gradient" id="Gradient_4m06l"]
+offsets = PackedFloat32Array(0.10502283, 0.1826484, 0.18721461, 0.3105023, 0.44748858)
+colors = PackedColorArray(1, 1, 1, 1, 0.55319154, 0.55319154, 0.55319154, 1, 0.55319154, 0.55319154, 0.55319154, 1, 0.680851, 0.680851, 0.680851, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2p6m"]
+gradient = SubResource("Gradient_4m06l")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Pickup" type="Sprite2D" unique_id=201728345]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_pg2rt")
+possible_pickups = Array[ExtResource("2_gyxxy")]([ExtResource("2_7cqbe"), ExtResource("4_4m06l")])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=644846706]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1846163198]
+shape = SubResource("CircleShape2D_j2p6m")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1841499398]
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_j2p6m")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2147055995]
+color = Color(1, 1, 0.2627451, 0.9098039)
+energy = 2.0
+texture = SubResource("GradientTexture2D_j2p6m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

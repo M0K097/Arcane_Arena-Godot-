@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PickupResource" format=3 uid="uid://belptg5apaxkl"]
+
+[ext_resource type="Resource" uid="uid://dh1mmbkvw2g56" path="res://resources/ice_wand.tres" id="1_jtux2"]
+[ext_resource type="Texture2D" uid="uid://c33hum8yf0cam" path="res://art/weapons/FireBall/ice_bolts2.png" id="2_pdw67"]
+[ext_resource type="Script" uid="uid://c011fv04ni5dn" path="res://scripts/PickupResource.gd" id="3_j1vme"]
+
+[resource]
+script = ExtResource("3_j1vme")
+icon = ExtResource("2_pdw67")
+Weapon_Resource = ExtResource("1_jtux2")
+metadata/_custom_type_script = "uid://c011fv04ni5dn"

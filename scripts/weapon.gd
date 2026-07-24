@@ -28,3 +28,6 @@ func _instantiate_projectile(target: CharacterBody2D):
 	shot.global_position = global_position
 	shot.target = target
 	get_tree().current_scene.add_child(shot)
+
+func set_weapon_data(data: WeaponResource):
+	self.weapon_data = data
