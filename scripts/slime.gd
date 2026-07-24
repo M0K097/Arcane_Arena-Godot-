@@ -24,14 +24,14 @@ func _on_jump_area_body_entered(body: Node2D) -> void:
 		animation.play("jump_attack")
 		shadow.scale *= 0.5
 		animation.position.y -= 10
-		movement_speed = 120
+		movement_speed = 80
 
 func _on_jump_area_body_exited(body: Node2D) -> void:
 	if body is Player:
 		animation.play("default")
 		animation.position.y += 10
 		shadow.scale *= 2
-		movement_speed = 50
+		movement_speed = 40
 
 func _spawn_baby(spawn_coordinates: Vector2):
 		var baby_slime = slime.instantiate()

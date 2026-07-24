@@ -3,7 +3,7 @@ class_name Player
 
 @onready var animator = $AnimatedSprite2D
 
-const SPEED = 150
+const SPEED = 120
 const SMOOTHING = 2
 
 var last_direction

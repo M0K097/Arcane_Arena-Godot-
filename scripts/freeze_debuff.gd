@@ -3,7 +3,8 @@ extends Node2D
 var target: CharacterBody2D
 var original_speed: int
 var slowed:bool = false
-@export var slow_effect_strength = 30
+
+@export var slow_effect_strength = 40
 
 func _ready():
 	target = get_parent()
