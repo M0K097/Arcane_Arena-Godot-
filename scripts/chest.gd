@@ -16,17 +16,19 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _animate_with_tween():
 	var tween = create_tween()
-	tween.tween_property(self, "position", position + Vector2(0,-20), 0.3).set_trans(Tween.TRANS_BOUNCE)
-	tween.tween_property(self, "scale", Vector2(1.5,1.5), 0.5).set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_property(self, "position", position + Vector2(0,-20), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_property(self, "scale", Vector2(1.5,1.5), 0.2).set_trans(Tween.TRANS_BOUNCE)
 	await tween.finished
 	play()
+	var tween4 = create_tween()
+	tween4.tween_property(self, "position", position + Vector2(0,0), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	await tween4.finished
 	_drop_item()
 	var tween2 = create_tween()
-	tween2.parallel().tween_property(self, "scale", Vector2(1,1), 0.3).set_trans(Tween.TRANS_BOUNCE)
-	tween2.parallel().tween_property(self, "position", position + Vector2(0,20), 0.3).set_trans(Tween.TRANS_BOUNCE)
+	tween2.parallel().tween_property(self, "scale", Vector2(1,1), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	tween2.parallel().tween_property(self, "position", position + Vector2(0,20), 0.2).set_trans(Tween.TRANS_BOUNCE)
 	await tween2.finished
 	var tween3 = create_tween()
-	tween3.parallel().tween_property(self, "rotation", randi_range(10,40), 0.5).set_trans(Tween.TRANS_BOUNCE)
 	tween3.parallel().tween_property(self, "scale", Vector2.ZERO, 0.5).set_trans(Tween.TRANS_BOUNCE)
 	await tween3.finished
 	queue_free()

@@ -2,6 +2,70 @@
 
 [ext_resource type="Script" uid="uid://ddrnrp4wchmib" path="res://scripts/hud.gd" id="1_ahhtf"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ahhtf"]
+color = Color(0.38490686, 0.110863976, 0, 0.9882353)
+thickness = 30
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_5ysmq"]
+color = Color(0.38039216, 0.75686276, 0, 1)
+thickness = 30
+vertical = true
+
+[sub_resource type="FontFile" id="FontFile_oo0fn"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahhtf"]
+font = SubResource("FontFile_oo0fn")
+font_size = 30
+font_color = Color(0, 1, 0.28627452, 1)
+outline_size = 6
+outline_color = Color(0, 0.7254902, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0.003025536, 0.002803733, 1)
+shadow_offset = Vector2(10, 5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j2p6m"]
+lifetime_randomness = 0.4
+particle_flag_disable_z = true
+direction = Vector3(1, -1, 0)
+initial_velocity_max = 280.33
+gravity = Vector3(0, 98, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = -2.2351742e-06
+scale_max = 17.74
+color = Color(0, 0.92156863, 0, 1)
+hue_variation_min = -0.17000002
+hue_variation_max = 0.59999996
+
 [node name="HUD" type="Control" unique_id=109111923]
 layout_mode = 3
 anchors_preset = 0
@@ -10,15 +74,51 @@ offset_bottom = 40.0
 script = ExtResource("1_ahhtf")
 
 [node name="Healthbar" type="ProgressBar" parent="." unique_id=1752917168]
-layout_mode = 0
-offset_left = 27.0
-offset_top = -38.0
-offset_right = 359.0
-offset_bottom = -11.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -129.0
+offset_right = 44.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9700956, 0.9424914, 0.93603283, 1)
+theme_override_styles/background = SubResource("StyleBoxLine_ahhtf")
+theme_override_styles/fill = SubResource("StyleBoxLine_5ysmq")
 max_value = 3.0
 step = 1.0
-value = 10.0
-rounded = true
+value = 3.0
 allow_greater = true
 allow_lesser = true
+fill_mode = 3
 show_percentage = false
+
+[node name="Label" type="Label" parent="Healthbar" unique_id=1840172074]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.89000005
+anchor_right = 0.5
+anchor_bottom = 0.89000005
+offset_left = -9.0
+offset_top = 15.459999
+offset_right = 25.0
+offset_bottom = 90.46
+grow_horizontal = 0
+grow_vertical = 2
+text = "3
+"
+label_settings = SubResource("LabelSettings_ahhtf")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=267652721]
+position = Vector2(40, -24)
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.84
+process_material = SubResource("ParticleProcessMaterial_j2p6m")

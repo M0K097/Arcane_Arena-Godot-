@@ -55,6 +55,5 @@ func _death():
 		queue_free()
 		print("GAME OVER")
 
-
 func _on_damage_cooldown_timeout() -> void:
 	on_damage_cooldown = false
