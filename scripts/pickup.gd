@@ -12,6 +12,12 @@ func _ready() -> void:
 	arena = Rect2(Vector2(-100,-50), Vector2(-100,-50))
 	_fancy_placement()
 
+func _process(_delta: float) -> void:
+	var tween = create_tween()
+	var flicker = randf_range(0.5,1.5)
+	tween.tween_property($PointLight2D, "scale", Vector2(flicker, flicker),0.1).set_trans(Tween.TRANS_LINEAR)
+
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -30,8 +36,9 @@ func _fancy_placement():
 	var tween = create_tween()
 	var placement = get_random_place_inside_arena(arena)
 	tween.parallel().tween_property(self, "position", position + Vector2(0,-50), 0.3).set_trans(Tween.TRANS_BOUNCE)
-	tween.parallel().tween_property(self, "scale", Vector2(0.8,0.8), 0.3).set_trans(Tween.TRANS_BOUNCE)
+	tween.parallel().tween_property(self, "scale", Vector2(0.6,0.6), 0.3).set_trans(Tween.TRANS_BOUNCE)
 	await tween.finished
 	var tween2 = create_tween()
 	tween2.parallel().tween_property(self, "position", placement, 1).set_trans(Tween.TRANS_ELASTIC)
 	tween2.parallel().tween_property(self, "scale", Vector2(0.4,0.4), 0.5).set_trans(Tween.TRANS_LINEAR)
+	

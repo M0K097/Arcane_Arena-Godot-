@@ -42,8 +42,9 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_j2p6m")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2147055995]
-color = Color(1, 1, 0.2627451, 0.9098039)
+color = Color(0.904367, 0.8877434, 0.5092964, 0.9098039)
 energy = 2.0
 texture = SubResource("GradientTexture2D_j2p6m")
+texture_scale = 1.4
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
