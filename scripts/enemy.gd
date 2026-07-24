@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Enemy
 
+var chest = preload("res://scenes/chest.tscn")
+
 var target : CharacterBody2D
 @export var movement_speed: float
 @export var health: int
@@ -14,19 +16,20 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 	else:
 		print(self.name , " has no player reference")
-	
-	if health <= 0:
-		_action_on_death()
-		queue_free()
+
 
 func _action_on_death():
-	pass
-
+	var tween = create_tween()
+	var random_rotation = randi_range(10,40)
+	tween.tween_property(self, "rotation", random_rotation , 0.3).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(self, "scale", Vector2.ZERO , 0.2).set_trans(Tween.TRANS_QUAD)
+	await tween.finished
+	queue_free()
 
 func do_damage(damage_value: int):
 	health -= damage_value
 	if health <= 0:
-		queue_free()
+		_action_on_death()
 
 func set_movement_speed(value: int):
 	if value >= 0 and value <= 1000:
