@@ -160,6 +160,7 @@ collision_mask = 0
 script = ExtResource("1_p2gj0")
 movement_speed = 60.0
 health = 100
+drop_chance = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1275583696]
 shape = SubResource("CircleShape2D_j2p6m")

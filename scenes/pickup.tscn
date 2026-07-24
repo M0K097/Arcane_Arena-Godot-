@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://3t2yoy84an4b"]
 
 [ext_resource type="Script" uid="uid://beb6ghuerf8x4" path="res://scripts/pickup.gd" id="1_pg2rt"]
-[ext_resource type="Resource" uid="uid://dq8jr6v2r71dp" path="res://resources/pickup_fire_wand.tres" id="2_7cqbe"]
-[ext_resource type="Script" uid="uid://c011fv04ni5dn" path="res://scripts/PickupResource.gd" id="2_gyxxy"]
-[ext_resource type="Resource" uid="uid://belptg5apaxkl" path="res://resources/pickup_ice_wand.tres" id="4_4m06l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2p6m"]
 radius = 15.0
@@ -30,7 +27,6 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Pickup" type="Sprite2D" unique_id=201728345]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_pg2rt")
-possible_pickups = Array[ExtResource("2_gyxxy")]([ExtResource("2_7cqbe"), ExtResource("4_4m06l")])
 
 [node name="Area2D" type="Area2D" parent="." unique_id=644846706]
 

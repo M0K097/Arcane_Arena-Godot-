@@ -3,6 +3,12 @@ extends AnimatedSprite2D
 var open: bool = false
 var pickup = preload("res://scenes/pickup.tscn")
 
+func _ready() -> void:
+	var tween = create_tween()
+	scale = Vector2.ZERO
+	tween.parallel().tween_property(self, "position", position + Vector2(0,20), 0.3).set_trans(Tween.TRANS_BOUNCE)
+	tween.parallel().tween_property(self, "scale", Vector2(1,1), 0.3).set_trans(Tween.TRANS_BOUNCE)
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player and not open:
 		_animate_with_tween()

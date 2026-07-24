@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var possible_pickups: Array[PickupResource] = []
+var possible_pickups: Array[PickupResource] = [preload("res://resources/pickup_ice_wand.tres"),preload("res://resources/pickup_fire_wand.tres")]
 var wand = preload("res://scenes/MagicWand.tscn")
 var choosen_pickup: PickupResource
 var arena: Rect2
@@ -16,7 +16,6 @@ func _process(_delta: float) -> void:
 	var tween = create_tween()
 	var flicker = randf_range(0.5,1.5)
 	tween.tween_property($PointLight2D, "scale", Vector2(flicker, flicker),0.1).set_trans(Tween.TRANS_LINEAR)
-
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

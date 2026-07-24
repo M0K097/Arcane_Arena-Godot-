@@ -8,7 +8,7 @@ var slime = preload("res://scenes/slime.tscn")
 func _ready() -> void:
 	animation.play("default")
 
-func _action_on_death():
+func _second_action_on_death():
 	if scale.x > 0.5:
 		for count in range(2):
 			var spawn_position = self.global_position
@@ -24,7 +24,7 @@ func _on_jump_area_body_entered(body: Node2D) -> void:
 		animation.play("jump_attack")
 		shadow.scale *= 0.5
 		animation.position.y -= 10
-		movement_speed = 80
+		movement_speed = 90
 
 func _on_jump_area_body_exited(body: Node2D) -> void:
 	if body is Player:
