@@ -91,7 +91,7 @@ texture = SubResource("GradientTexture2D_j2p6m")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="PointLight2D" unique_id=911987295]
 position = Vector2(1.0666667, -2)
 emitting = false
-amount = 20
+amount = 50
 one_shot = true
 explosiveness = 0.8
 trail_enabled = true

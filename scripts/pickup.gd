@@ -22,6 +22,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var new_wand = wand.instantiate()
 		new_wand.set_weapon_data(choosen_pickup.Weapon_Resource)
+		var tween = create_tween()
+		tween.parallel().tween_property(self, "scale", Vector2(0.8,0.8), 0.3).set_trans(Tween.TRANS_BOUNCE)
+		await tween.finished
 		body.call_deferred("add_child",new_wand)
 		queue_free()
 

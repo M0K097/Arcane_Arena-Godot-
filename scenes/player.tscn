@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctkq1fl7jklia" path="res://art/player/Mage_2_Side.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://c6xpew647g1qd" path="res://art/player/Mage_2.png" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://68ilt0fu5sci" path="res://scripts/player_animation_controller.gd" id="5_qlg0r"]
-[ext_resource type="Script" uid="uid://ddj5ewsoy5sw2" path="res://scenes/camera_2d.gd" id="6_fjrip"]
+[ext_resource type="Script" uid="uid://ddj5ewsoy5sw2" path="res://scripts/camera_2d.gd" id="6_fjrip"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
 radius = 6.0

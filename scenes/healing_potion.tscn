@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://6wgcb6yujy3e"]
+
+[ext_resource type="Texture2D" uid="uid://bp7fls2ca0vw" path="res://art/items/Healing_Potion.png" id="1_lihx5"]
+[ext_resource type="Script" uid="uid://5sci8tkc3olc" path="res://scenes/healing_potion.gd" id="2_0ak4u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ak4u"]
+atlas = ExtResource("1_lihx5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhhil"]
+atlas = ExtResource("1_lihx5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoact"]
+atlas = ExtResource("1_lihx5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1uil"]
+atlas = ExtResource("1_lihx5")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hobvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ak4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhhil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoact")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1uil")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ak4u"]
+radius = 14.035668
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lihx5"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 13.696
+initial_velocity_max = 71.13
+gravity = Vector3(0, 98, 0)
+scale_min = 0.099999994
+color = Color(0.59962183, 0.89748883, 0.31351256, 1)
+hue_variation_min = -0.030000022
+hue_variation_max = 0.46999997
+
+[sub_resource type="Gradient" id="Gradient_bo63m"]
+offsets = PackedFloat32Array(0.22374429, 0.38356164, 0.5753425)
+colors = PackedColorArray(1, 1, 1, 1, 0.5915493, 0.5915493, 0.5915493, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nhhil"]
+gradient = SubResource("Gradient_bo63m")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="HealingPotion" type="AnimatedSprite2D" unique_id=977958074]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_hobvg")
+autoplay = "default"
+frame_progress = 0.6566976
+script = ExtResource("2_0ak4u")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=71052100]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=886812201]
+shape = SubResource("CircleShape2D_0ak4u")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1689784472]
+position = Vector2(0, -5)
+emitting = false
+lifetime = 0.78
+process_material = SubResource("ParticleProcessMaterial_lihx5")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1256204483]
+position = Vector2(0, -6)
+color = Color(0.4627451, 0.9764706, 0.36862746, 1)
+energy = 0.5
+texture = SubResource("GradientTexture2D_nhhil")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

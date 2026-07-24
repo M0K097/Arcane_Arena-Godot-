@@ -46,6 +46,9 @@ func _check_for_hit():
 		if body is Enemy:
 			get_damage(body)
 
+func heal():
+	health += 1
+	HUD.update_health(health)
 
 func _death():
 		var tween = create_tween()
